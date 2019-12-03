@@ -36,16 +36,15 @@ const createMutipleHtmlPlugin = () => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "../index.html"), //指向模板文件
         filename: page.filename,
-        minify: 
-        process.env.NODE_ENV === "development" ? 
-        {
-          removeAttributeQuotes: true, //删除属性的双引号
-          collapseInlineTagWhitespace: true, //折叠一行
-        } : {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-        },
+        minify: process.env.NODE_ENV === "development" ? 
+          {
+            removeAttributeQuotes: true, //删除属性的双引号
+            collapseInlineTagWhitespace: true, //折叠一行
+          } : {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+          },
         chunks: page.chunks,
         hash: true //hash 为了开发中js有缓存效果，加入hash，这样可以有效避免缓存JS
       })

@@ -1,20 +1,20 @@
 {
-  "name": "vue-webpack4-template",
+  "name": "vue-webpack4-multiple-template",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Zhang-zhangyong",
   "scripts": {
-    "dev": "cross-env NODE_ENV=develpment webpack-dev-server --config ./build/webpack.dev.conf.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.conf.js",
     "build": "node ./build/build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zhang-zhangyong/vue-webpack4-template.git"
+    "url": "git+https://github.com/Zhang-zhangyong/vue-webpack4-multiple-template.git"
   },
   "bugs": {
-    "url": "https://github.com/Zhang-zhangyong/vue-webpack4-template/issues"
+    "url": "https://github.com/Zhang-zhangyong/vue-webpack4-multiple-template/issues"
   },
-  "homepage": "https://github.com/Zhang-zhangyong/vue-webpack4-template#readme",
+  "homepage": "https://github.com/Zhang-zhangyong/vue-webpack4-multiple-template#readme",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.2",

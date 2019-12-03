@@ -57,11 +57,11 @@ module.exports = webpackMerge(baseConfg, {
 				to: "static",
 				ignore: [".*"],
 			},
-			{
-				from: path.resolve(__dirname, "../text"),
-				to: "./",
-				ignore: [".*"],
-			}
+			// {
+			// 	from: path.resolve(__dirname, "../text"),
+			// 	to: "./",
+			// 	ignore: [".*"],
+			// }
 		]),
 		new webpack.DefinePlugin({
 			"process.env": {

@@ -1,6 +1,7 @@
 <template>
   <div>
     Home
+    <Component1 />
   </div>
 </template>
 <script>

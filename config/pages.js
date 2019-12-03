@@ -16,6 +16,7 @@ module.exports = [
     title: "详情",
     filename: "detail.html",
     chunks: ["detail", "vendor"],
-    hash: true //生成带有hash值
-  }
+    hash: true 
+  },
+  // ...更多页面
 ];

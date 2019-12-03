@@ -30,9 +30,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$router.push({
-        name: "Detail"
-      });
+      console.log(11111);
     }
   }
 };
