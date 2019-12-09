@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const webpackMerge = require("webpack-merge");
 const baseConfg = require("./webpack.base.conf");
+const AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin");
 
 module.exports = webpackMerge(baseConfg, {
 	mode: "production",
@@ -40,16 +41,26 @@ module.exports = webpackMerge(baseConfg, {
 			dry: false,
 			// cleanOnceBeforeBuildPatterns: ['**/*', '!dist/*.*']
 		}),
-		// new HtmlWebpackPlugin({
-		// 	template: "index.html",
-		// 	minify: {
-		// 		removeComments: true,
-		// 		collapseWhitespace: true,
-		// 		removeAttributeQuotes: true
-		// 		// more options:
-		// 		// https://github.com/kangax/html-minifier#options-quick-reference
-		// 	}
-		// }),
+		new webpack.DllReferencePlugin({
+			context: path.resolve(__dirname, '..'),
+			manifest: require('../dll/vendor-manifest.json')
+		}),
+		new AddAssetHtmlPlugin({
+			filepath: path.resolve(__dirname, '../dll/vendor.dll.js'),
+			outputPath: './',
+			publicPath: './',
+			hash: true
+		}),
+		new HtmlWebpackPlugin({
+			template: "index.html",
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeAttributeQuotes: true
+				// more options:
+				// https://github.com/kangax/html-minifier#options-quick-reference
+			}
+		}),
 		// copy custom static assets
 		new CopyWebpackPlugin([
 			{

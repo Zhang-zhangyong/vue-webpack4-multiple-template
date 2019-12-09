@@ -29,6 +29,9 @@ module.exports = webpackMerge(baseConfg,{
 	devtool: 'eval-source-map', // 原始源代码（仅限行）
 	stats: "minimal", // 控制台日志显示控制
 	plugins: [
+		new webpack.ProvidePlugin({  // 加载的模块在使用时将不再需要import和require进行引入
+			Vue: 'vue/dist/vue.esm' 
+		}),	
 		new MiniCssExtractPlugin({
 			filename: 'style/[name].css',
 			chunkFilename: 'style/[name].css'
